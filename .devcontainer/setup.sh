@@ -14,10 +14,10 @@ userspacePath="$1"
 git config --global --add safe.directory "$userspacePath"
 git submodule update --init --recursive
 
-[ -d /workspaces/qmk_firmware ] || git clone https://github.com/qmk/qmk_firmware.git /workspaces/qmk_firmware
-git config --global --add safe.directory /workspaces/qmk_firmware
+[ -d /workspaces/vial-qmk ] || git clone https://github.com/vial-kb/vial-qmk.git /workspaces/vial-qmk
+git config --global --add safe.directory /workspaces/vial-qmk
 
-qmk config user.qmk_home=/workspaces/qmk_firmware
+qmk config user.qmk_home=/workspaces/vial-qmk
 qmk config user.overlay_dir="$userspacePath"
 
 qmk git-submodule
